@@ -63,4 +63,8 @@ crashlytics-build.properties
 # Audio files
 *.wav
 *.wav.meta
+# Imported SFX
+.Assets/Audio/Free Pack
+.Assets/Adio/Free UI Click Sound Effects Pack
+
 
