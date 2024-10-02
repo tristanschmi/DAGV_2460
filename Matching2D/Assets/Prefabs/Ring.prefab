@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8234928300943308550}
   - component: {fileID: 7917841904464433921}
   - component: {fileID: 1268701280394052755}
+  - component: {fileID: -2133729521244199705}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Untagged
@@ -160,8 +161,8 @@ MonoBehaviour:
         m_MethodName: ChangeRendererColor
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: a4c5b4e5400ab4a24bea06d13aa0073f, type: 2}
-          m_ObjectArgumentAssemblyTypeName: ColorID, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: 642f4ac0ca3e640ebb77e265c37c3619, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ColorIDDataList, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -173,3 +174,20 @@ MonoBehaviour:
   disableEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-2133729521244199705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503567248829713123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdb460b097674dd88408eeedbfafdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idObj: {fileID: 0}
+  startEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  colorIDDataListObj: {fileID: 11400000, guid: 642f4ac0ca3e640ebb77e265c37c3619, type: 2}
