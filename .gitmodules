@@ -4,3 +4,6 @@
 [submodule "Tools"]
 	path = Tools
 	url = https://github.com/tristanschmi/ArtisanDream.Tools
+[submodule "Platformer/Assets/Tools"]
+	path = Platformer/Assets/Tools
+	url = https://github.com/tristanschmi/ArtisanDream.Tools
