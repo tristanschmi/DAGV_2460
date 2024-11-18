@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
-//Name: beefyRun.ma
-//Last modified: Sun, Nov 17, 2024 06:48:36 PM
+//Name: beefyRun.0002.ma
+//Last modified: Sun, Nov 17, 2024 06:44:23 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "Ultimate_Beefy_v1_0_2" -rfn "Ultimate_Beefy_v1_0_2RN" -op "v=0;p=17"
 		 -typ "mayaAscii" "/Users/tristanschmidt/Downloads/Ultimate_Beefy_v1.0.2.ma";
@@ -14,7 +14,8 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Mac OS X 13.6.6";
-fileInfo "UUID" "0F8E6DD8-F94B-0B70-1F5D-7DB6571ED76D";
+fileInfo "UUID" "188ADA15-A54E-48C6-F55D-7AB485C8E5ED";
+fileInfo "exportedFrom" "/Users/tristanschmidt/Desktop/Git Repos/DAGV_2460/Platformer/Assets/Maya/New_Project/scenes/beefyRun.ma";
 createNode transform -s -n "persp";
 	rename -uid "5000F160-4D40-7121-B2FD-B88FF7D57419";
 	setAttr ".v" no;
@@ -146,6 +147,249 @@ createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "11406AF1-F245-775B-4721-84B84B08F727";
 	setAttr ".b" -type "string" "playbackOptions -min 0 -max 23 -ast -1 -aet 286 ";
 	setAttr ".st" 6;
+createNode aiOptions -s -n "defaultArnoldRenderOptions";
+	rename -uid "17D17663-4CDE-6A90-624A-9F8C297E382E";
+	setAttr ".version" -type "string" "5.3.5.2";
+createNode aiAOVFilter -s -n "defaultArnoldFilter";
+	rename -uid "73202E73-44F3-1531-3376-F28B690E87E3";
+	setAttr ".ai_translator" -type "string" "gaussian";
+createNode aiAOVDriver -s -n "defaultArnoldDriver";
+	rename -uid "3ED4F3C5-4D0B-0CD9-AC31-E5AE7AFB6471";
+	setAttr ".ai_translator" -type "string" "exr";
+createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
+	rename -uid "420DF335-4F06-17BA-637E-94BD2A666B16";
+	setAttr ".ai_translator" -type "string" "maya";
+	setAttr ".output_mode" 0;
+createNode animCurveTA -n "Beefy_ROOTC_rotateX";
+	rename -uid "882DD9E2-BA4A-95D6-F61E-ADA465D6C9CA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 12.280006773725216 2 12.27768575624815
+		 3 12.140207888096423 6 12.279687085739598 14 12.279687085739598 15 12.185381915255622
+		 18 12.279911056732596;
+createNode animCurveTL -n "Beefy_rFootIKC_translateZ";
+	rename -uid "4D351F81-DF45-E72B-092A-82BBF021BB72";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 -1.338956744735319 5 -0.28614944696757849
+		 7 1.8071657568258175 9 2.321193513466842 11 1.9741578238900837 13 2.2828132729077435
+		 17 0.56043735106001313 19 -0.33016384987172454 21 -1.1546780628495079 23 -1.573078739106343;
+createNode animCurveTA -n "Beefy_rFootIKC_rotateX";
+	rename -uid "5BB97413-5447-115E-6A23-E6BA631210BE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 -31.215910719710546 3 0 5 0 9 0 11 62.524631128511487
+		 13 100.6004424890931 15 136.5376404958887 17 90.467589147576277 19 34.978382940973788
+		 21 -1.6937885993224306 23 -22.647495721995753;
+createNode animCurveTL -n "Beefy_lFootIKC_translateY";
+	rename -uid "3CC69A38-7546-CACB-5204-109B17B42F4C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.263732028007543 3 0.77318093700884649
+		 7 1.2015398568320634 11 1.0846527339013281 13 0.035283804692088694 21 0.035283804692088694
+		 23 2.2104150553878901;
+createNode animCurveTL -n "Beefy_lFootIKC_translateZ";
+	rename -uid "B9FA5D98-2C4B-0012-9BE8-20905727617D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 9 ".ktv[0:8]"  1 -1.9345048475422453 5 -0.38251790154290566
+		 7 0.65952849872600527 9 1.3422937165575415 11 1.4790219392314667 17 -0.12712213455222399
+		 19 -1.9336546802215038 21 -2.9796366529101075 23 -2.2511427342242243;
+createNode animCurveTA -n "Beefy_lFootIKC_rotateX";
+	rename -uid "9949CEF9-9340-CD69-80CF-CEBC90970DB6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 115.30417958738195 3 140.361434399111
+		 5 95.084094642287354 7 39.548259873450291 9 -14.404378049929715 11 -31.875180332377763
+		 13 -31.875180332377763 15 0 21 0 23 87.193544289241942;
+createNode animCurveTA -n "Beefy_rShoulderFKC_rotateZ";
+	rename -uid "ED45E80A-5341-2BCD-1A0C-4D91D6F2172B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -77;
+createNode animCurveTA -n "Beefy_lShoulderFKC_rotateZ";
+	rename -uid "4EC6B231-F143-B5AD-B94B-E387E8FBD205";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -77;
+createNode animCurveTA -n "Beefy_rFinger2J1C_rotateZ";
+	rename -uid "22F93C4C-A845-65DB-8507-C9A3412D9B25";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -80.804855799715455;
+createNode animCurveTA -n "Beefy_rFinger2J2C_rotateZ";
+	rename -uid "D1DA2B94-E047-B5D8-B5D7-42A1B8F424A8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -66.387756384953519;
+createNode animCurveTA -n "Beefy_rFinger2J3C_rotateZ";
+	rename -uid "B9390099-FE41-0FA6-7745-368D8A34602E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -97.090641237293909;
+createNode animCurveTA -n "Beefy_rFinger1J1C_rotateZ";
+	rename -uid "1059E0D2-0B4E-F206-C62D-C5A84F7B59EF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -87.248809225289449;
+createNode animCurveTA -n "Beefy_rFinger1J2C_rotateZ";
+	rename -uid "9AFB895F-D842-16D0-069F-F0ACDC709FD5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -52.792370650857194;
+createNode animCurveTA -n "Beefy_rFinger1J3C_rotateZ";
+	rename -uid "611BB1E6-9141-21DD-CA9D-5A91AD06AAAC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -110.93594166550675;
+createNode animCurveTA -n "Beefy_rThumbJ1C_rotateX";
+	rename -uid "35A7AA64-7840-3C83-576C-8B9C397649F7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 13.294400093546971;
+createNode animCurveTA -n "Beefy_rThumbJ1C_rotateY";
+	rename -uid "3DA4CF80-2347-45D1-70E2-FC970A3FE7A7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -39.498534941082077;
+createNode animCurveTA -n "Beefy_rThumbJ1C_rotateZ";
+	rename -uid "07C0E7D5-C94A-9106-EA87-CF99465B5135";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -62.945378273782445;
+createNode animCurveTA -n "Beefy_rThumbJ2C_rotateX";
+	rename -uid "EFE412A2-5345-9938-CF27-C094F6DACADC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 11.491160100355188;
+createNode animCurveTA -n "Beefy_rThumbJ2C_rotateY";
+	rename -uid "141E55B6-FE42-09B3-F419-ABB913CBDB6A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 3.3644449764098665;
+createNode animCurveTA -n "Beefy_rThumbJ2C_rotateZ";
+	rename -uid "8A3FFF40-0A40-8E75-EC22-789C8166B5EB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -80.934737389845452;
+createNode animCurveTA -n "Beefy_rThumbJ3C_rotateZ";
+	rename -uid "BB6D4FC5-904B-DCBF-DD56-BB87064BBF4D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -36.441678813684263;
+createNode animCurveTA -n "Beefy_lFinger1J1C_rotateZ";
+	rename -uid "B7466ACE-7E45-D2A3-0AD4-DA8305A70B89";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -78.766946770012126;
+createNode animCurveTA -n "Beefy_lFinger2J1C_rotateZ";
+	rename -uid "2B9AB791-A74B-FECA-4958-018E267DF35E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -82.437198369521212;
+createNode animCurveTA -n "Beefy_lFinger2J2C_rotateZ";
+	rename -uid "FEDF7263-A94A-61FA-A982-D58CEB9FF0DA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -71.355752749209486;
+createNode animCurveTA -n "Beefy_lFinger2J3C_rotateZ";
+	rename -uid "691C10DF-BD49-93FE-59AD-BCB96A3D1A73";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -90.107180431649965;
+createNode animCurveTA -n "Beefy_lFinger1J2C_rotateZ";
+	rename -uid "47AD31D1-0547-4413-4622-6DBECA1ABE3C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -74.750391946831243;
+createNode animCurveTA -n "Beefy_lFinger1J3C_rotateZ";
+	rename -uid "C0ACF67E-4645-FE01-CC3D-6FACB380D206";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -87.472152481865223;
+createNode animCurveTA -n "Beefy_lThumbJ1C_rotateY";
+	rename -uid "CCF248D8-784D-35ED-7E46-66B59525603C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -29.30422119476448;
+createNode animCurveTA -n "Beefy_lThumbJ1C_rotateZ";
+	rename -uid "C3BB32B5-E04C-0636-BAB9-06ADB7859ADC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -69.712522838787223;
+createNode animCurveTA -n "Beefy_lThumbJ2C_rotateZ";
+	rename -uid "CBE0E6E9-514A-C01A-332A-14B93E7BA47D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -55.865017188804607;
+createNode animCurveTA -n "Beefy_lThumbJ1C_rotateX";
+	rename -uid "D04D60F9-CC43-F5D7-716E-6AA602D9D391";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 15.565509567661501;
+createNode animCurveTA -n "Beefy_lThumbJ3C_rotateZ";
+	rename -uid "19230D8C-6F45-AA53-0A83-A78F75A1BF76";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -49.172431915359361;
+createNode animCurveTA -n "Beefy_lShoulderFKC_rotateY";
+	rename -uid "05981A70-B14D-A43E-FCBF-A7B94126EB03";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 12 ".ktv[0:11]"  1 -39.031566500758842 3 -10.99077650825096
+		 5 32.256567372638933 7 52.170852904441119 9 70.595466626218695 11 86.266038382086663
+		 13 96.4618742135833 15 62.37668611325828 17 21.922991324009384 19 -21.774865671393385
+		 21 -46.959376862142342 23 -69.748944490669771;
+createNode animCurveTA -n "Beefy_lElbowFKC_rotateY";
+	rename -uid "54B5F382-914D-EF64-78C3-5E92C94C393C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -46.345594813443704;
+createNode animCurveTA -n "Beefy_rShoulderFKC_rotateY";
+	rename -uid "EB573E81-1D46-D9F4-22CE-5D9C96DB4BDB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 12 ".ktv[0:11]"  1 57.128791442482552 3 24.811672738831234
+		 5 -8.2734883862029367 7 -40.501294951668577 9 -60.416936068211285 11 -75.207558781276603
+		 13 -84.512320643741816 15 -48.458639157168044 17 19.502938803030577 19 55.754224582417322
+		 21 80.790097595380942 23 97.878018673370434;
+createNode animCurveTA -n "Beefy_rElbowFKC_rotateY";
+	rename -uid "A641BC7B-9B4E-EA16-6224-B5B32A366169";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -62.229175927709562;
+createNode animCurveTL -n "Beefy_ROOTC_translateY";
+	rename -uid "9824BC56-EF4D-C9DE-F640-3CB9C4D463FC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 -0.381488597554136 3 -1.2081697291443847
+		 5 -0.39898602530905958 7 -0.12817819860324153 9 0.13106739560382952 11 0.31278204060524128
+		 13 -0.47141974083711213 15 -1.0895689238148578 17 -0.22422434295846605 19 -0.022254459671342985
+		 21 0.248581583754234;
+createNode animCurveTL -n "Beefy_rFootIKC_translateY";
+	rename -uid "68E35E65-FD46-99B8-72A3-8C8AF8067F20";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  9 -6.2219615721845309e-17 11 -1.2657777371510033
+		 13 -2.0488975394169042 17 -0.88788916621408775 21 -1.3375859759816506 23 -0.84645342665386014;
+createNode animCurveTA -n "Beefy_ROOTC_rotateY";
+	rename -uid "9459EBF3-C540-C00C-01D5-C09682A93BA4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  2 -0.24059841273862231 3 -1.8617054834550393
+		 6 -0.08929672059283901 14 -0.08929672059283901 15 1.5331609237027641 18 0.048861745634940716;
+createNode animCurveTA -n "Beefy_ROOTC_rotateZ";
+	rename -uid "C1AA19A0-1E43-3D02-8DD5-73942E5C69C6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  2 1.105411990806223 3 8.5880229203246703
+		 6 0.41024329350467076 14 0.41024329350467076 15 -7.0630754694895765 18 -0.22447713597207661;
+createNode animCurveTA -n "Beefy_HeadC_rotateZ";
+	rename -uid "01FD6F53-E344-26CB-ACAB-7FAEF4E144B4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  2 0 3 13.023954587490008 5 0.77221905739475372
+		 14 0.77221905739475372 15 -14.17399432468496 18 -1.1992982578362639;
 createNode reference -n "Ultimate_Beefy_v1_0_2RN";
 	rename -uid "E751F40D-1E49-8683-306F-61BF40ED1EC3";
 	setAttr -s 41 ".phl";
@@ -679,249 +923,6 @@ createNode reference -n "Ultimate_Beefy_v1_0_2RN";
 		"Ultimate_Beefy_v1_0_2RN.placeHolderList[41]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
-createNode aiOptions -s -n "defaultArnoldRenderOptions";
-	rename -uid "17D17663-4CDE-6A90-624A-9F8C297E382E";
-	setAttr ".version" -type "string" "5.3.5.2";
-createNode aiAOVFilter -s -n "defaultArnoldFilter";
-	rename -uid "73202E73-44F3-1531-3376-F28B690E87E3";
-	setAttr ".ai_translator" -type "string" "gaussian";
-createNode aiAOVDriver -s -n "defaultArnoldDriver";
-	rename -uid "3ED4F3C5-4D0B-0CD9-AC31-E5AE7AFB6471";
-	setAttr ".ai_translator" -type "string" "exr";
-createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
-	rename -uid "420DF335-4F06-17BA-637E-94BD2A666B16";
-	setAttr ".ai_translator" -type "string" "maya";
-	setAttr ".output_mode" 0;
-createNode animCurveTA -n "Beefy_ROOTC_rotateX";
-	rename -uid "882DD9E2-BA4A-95D6-F61E-ADA465D6C9CA";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 12.280006773725216 2 12.27768575624815
-		 3 12.140207888096423 6 12.279687085739598 14 12.279687085739598 15 12.185381915255622
-		 18 12.279911056732596;
-createNode animCurveTL -n "Beefy_rFootIKC_translateZ";
-	rename -uid "4D351F81-DF45-E72B-092A-82BBF021BB72";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 -1.338956744735319 5 -0.28614944696757849
-		 7 1.8071657568258175 9 2.321193513466842 11 1.9741578238900837 13 2.2828132729077435
-		 17 0.56043735106001313 19 -0.33016384987172454 21 -1.1546780628495079 23 -1.573078739106343;
-createNode animCurveTA -n "Beefy_rFootIKC_rotateX";
-	rename -uid "5BB97413-5447-115E-6A23-E6BA631210BE";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 11 ".ktv[0:10]"  1 -31.215910719710546 3 0 5 0 9 0 11 62.524631128511487
-		 13 100.6004424890931 15 136.5376404958887 17 90.467589147576277 19 34.978382940973788
-		 21 -1.6937885993224306 23 -22.647495721995753;
-createNode animCurveTL -n "Beefy_lFootIKC_translateY";
-	rename -uid "3CC69A38-7546-CACB-5204-109B17B42F4C";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1.263732028007543 3 0.77318093700884649
-		 7 1.2015398568320634 11 1.0846527339013281 13 0.035283804692088694 21 0.035283804692088694
-		 23 2.2104150553878901;
-createNode animCurveTL -n "Beefy_lFootIKC_translateZ";
-	rename -uid "B9FA5D98-2C4B-0012-9BE8-20905727617D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 -1.9345048475422453 5 -0.38251790154290566
-		 7 0.65952849872600527 9 1.3422937165575415 11 1.4790219392314667 17 -0.12712213455222399
-		 19 -1.9336546802215038 21 -2.9796366529101075 23 -2.2511427342242243;
-createNode animCurveTA -n "Beefy_lFootIKC_rotateX";
-	rename -uid "9949CEF9-9340-CD69-80CF-CEBC90970DB6";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 115.30417958738195 3 140.361434399111
-		 5 95.084094642287354 7 39.548259873450291 9 -14.404378049929715 11 -31.875180332377763
-		 13 -31.875180332377763 15 0 21 0 23 87.193544289241942;
-createNode animCurveTA -n "Beefy_rShoulderFKC_rotateZ";
-	rename -uid "ED45E80A-5341-2BCD-1A0C-4D91D6F2172B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -77;
-createNode animCurveTA -n "Beefy_lShoulderFKC_rotateZ";
-	rename -uid "4EC6B231-F143-B5AD-B94B-E387E8FBD205";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -77;
-createNode animCurveTA -n "Beefy_rFinger2J1C_rotateZ";
-	rename -uid "22F93C4C-A845-65DB-8507-C9A3412D9B25";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -80.804855799715455;
-createNode animCurveTA -n "Beefy_rFinger2J2C_rotateZ";
-	rename -uid "D1DA2B94-E047-B5D8-B5D7-42A1B8F424A8";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -66.387756384953519;
-createNode animCurveTA -n "Beefy_rFinger2J3C_rotateZ";
-	rename -uid "B9390099-FE41-0FA6-7745-368D8A34602E";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -97.090641237293909;
-createNode animCurveTA -n "Beefy_rFinger1J1C_rotateZ";
-	rename -uid "1059E0D2-0B4E-F206-C62D-C5A84F7B59EF";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -87.248809225289449;
-createNode animCurveTA -n "Beefy_rFinger1J2C_rotateZ";
-	rename -uid "9AFB895F-D842-16D0-069F-F0ACDC709FD5";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -52.792370650857194;
-createNode animCurveTA -n "Beefy_rFinger1J3C_rotateZ";
-	rename -uid "611BB1E6-9141-21DD-CA9D-5A91AD06AAAC";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -110.93594166550675;
-createNode animCurveTA -n "Beefy_rThumbJ1C_rotateX";
-	rename -uid "35A7AA64-7840-3C83-576C-8B9C397649F7";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 13.294400093546971;
-createNode animCurveTA -n "Beefy_rThumbJ1C_rotateY";
-	rename -uid "3DA4CF80-2347-45D1-70E2-FC970A3FE7A7";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -39.498534941082077;
-createNode animCurveTA -n "Beefy_rThumbJ1C_rotateZ";
-	rename -uid "07C0E7D5-C94A-9106-EA87-CF99465B5135";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -62.945378273782445;
-createNode animCurveTA -n "Beefy_rThumbJ2C_rotateX";
-	rename -uid "EFE412A2-5345-9938-CF27-C094F6DACADC";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 11.491160100355188;
-createNode animCurveTA -n "Beefy_rThumbJ2C_rotateY";
-	rename -uid "141E55B6-FE42-09B3-F419-ABB913CBDB6A";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 3.3644449764098665;
-createNode animCurveTA -n "Beefy_rThumbJ2C_rotateZ";
-	rename -uid "8A3FFF40-0A40-8E75-EC22-789C8166B5EB";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -80.934737389845452;
-createNode animCurveTA -n "Beefy_rThumbJ3C_rotateZ";
-	rename -uid "BB6D4FC5-904B-DCBF-DD56-BB87064BBF4D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -36.441678813684263;
-createNode animCurveTA -n "Beefy_lFinger1J1C_rotateZ";
-	rename -uid "B7466ACE-7E45-D2A3-0AD4-DA8305A70B89";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -78.766946770012126;
-createNode animCurveTA -n "Beefy_lFinger2J1C_rotateZ";
-	rename -uid "2B9AB791-A74B-FECA-4958-018E267DF35E";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -82.437198369521212;
-createNode animCurveTA -n "Beefy_lFinger2J2C_rotateZ";
-	rename -uid "FEDF7263-A94A-61FA-A982-D58CEB9FF0DA";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -71.355752749209486;
-createNode animCurveTA -n "Beefy_lFinger2J3C_rotateZ";
-	rename -uid "691C10DF-BD49-93FE-59AD-BCB96A3D1A73";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -90.107180431649965;
-createNode animCurveTA -n "Beefy_lFinger1J2C_rotateZ";
-	rename -uid "47AD31D1-0547-4413-4622-6DBECA1ABE3C";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -74.750391946831243;
-createNode animCurveTA -n "Beefy_lFinger1J3C_rotateZ";
-	rename -uid "C0ACF67E-4645-FE01-CC3D-6FACB380D206";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -87.472152481865223;
-createNode animCurveTA -n "Beefy_lThumbJ1C_rotateY";
-	rename -uid "CCF248D8-784D-35ED-7E46-66B59525603C";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -29.30422119476448;
-createNode animCurveTA -n "Beefy_lThumbJ1C_rotateZ";
-	rename -uid "C3BB32B5-E04C-0636-BAB9-06ADB7859ADC";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -69.712522838787223;
-createNode animCurveTA -n "Beefy_lThumbJ2C_rotateZ";
-	rename -uid "CBE0E6E9-514A-C01A-332A-14B93E7BA47D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -55.865017188804607;
-createNode animCurveTA -n "Beefy_lThumbJ1C_rotateX";
-	rename -uid "D04D60F9-CC43-F5D7-716E-6AA602D9D391";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 15.565509567661501;
-createNode animCurveTA -n "Beefy_lThumbJ3C_rotateZ";
-	rename -uid "19230D8C-6F45-AA53-0A83-A78F75A1BF76";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -49.172431915359361;
-createNode animCurveTA -n "Beefy_lShoulderFKC_rotateY";
-	rename -uid "05981A70-B14D-A43E-FCBF-A7B94126EB03";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 12 ".ktv[0:11]"  1 -39.031566500758842 3 -10.99077650825096
-		 5 32.256567372638933 7 52.170852904441119 9 70.595466626218695 11 86.266038382086663
-		 13 96.4618742135833 15 62.37668611325828 17 21.922991324009384 19 -21.774865671393385
-		 21 -46.959376862142342 23 -69.748944490669771;
-createNode animCurveTA -n "Beefy_lElbowFKC_rotateY";
-	rename -uid "54B5F382-914D-EF64-78C3-5E92C94C393C";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -46.345594813443704;
-createNode animCurveTA -n "Beefy_rShoulderFKC_rotateY";
-	rename -uid "EB573E81-1D46-D9F4-22CE-5D9C96DB4BDB";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 12 ".ktv[0:11]"  1 57.128791442482552 3 24.811672738831234
-		 5 -8.2734883862029367 7 -40.501294951668577 9 -60.416936068211285 11 -75.207558781276603
-		 13 -84.512320643741816 15 -48.458639157168044 17 19.502938803030577 19 55.754224582417322
-		 21 80.790097595380942 23 97.878018673370434;
-createNode animCurveTA -n "Beefy_rElbowFKC_rotateY";
-	rename -uid "A641BC7B-9B4E-EA16-6224-B5B32A366169";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -62.229175927709562;
-createNode animCurveTL -n "Beefy_ROOTC_translateY";
-	rename -uid "9824BC56-EF4D-C9DE-F640-3CB9C4D463FC";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 11 ".ktv[0:10]"  1 -0.381488597554136 3 -1.2081697291443847
-		 5 -0.39898602530905958 7 -0.12817819860324153 9 0.13106739560382952 11 0.31278204060524128
-		 13 -0.47141974083711213 15 -1.0895689238148578 17 -0.22422434295846605 19 -0.022254459671342985
-		 21 0.248581583754234;
-createNode animCurveTL -n "Beefy_rFootIKC_translateY";
-	rename -uid "68E35E65-FD46-99B8-72A3-8C8AF8067F20";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  9 -6.2219615721845309e-17 11 -1.2657777371510033
-		 13 -2.0488975394169042 17 -0.88788916621408775 21 -1.3375859759816506 23 -0.84645342665386014;
-createNode animCurveTA -n "Beefy_ROOTC_rotateY";
-	rename -uid "9459EBF3-C540-C00C-01D5-C09682A93BA4";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  2 -0.24059841273862231 3 -1.8617054834550393
-		 6 -0.08929672059283901 14 -0.08929672059283901 15 1.5331609237027641 18 0.048861745634940716;
-createNode animCurveTA -n "Beefy_ROOTC_rotateZ";
-	rename -uid "C1AA19A0-1E43-3D02-8DD5-73942E5C69C6";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  2 1.105411990806223 3 8.5880229203246703
-		 6 0.41024329350467076 14 0.41024329350467076 15 -7.0630754694895765 18 -0.22447713597207661;
-createNode animCurveTA -n "Beefy_HeadC_rotateZ";
-	rename -uid "01FD6F53-E344-26CB-ACAB-7FAEF4E144B4";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  2 0 3 13.023954587490008 5 0.77221905739475372
-		 14 0.77221905739475372 15 -14.17399432468496 18 -1.1992982578362639;
 select -ne :time1;
 	setAttr ".o" 23;
 	setAttr ".unw" 23;
@@ -1019,4 +1020,4 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of beefyRun.ma
+// End of beefyRun.0002.ma
