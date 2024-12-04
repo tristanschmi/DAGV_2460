@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+
 [RequireComponent(typeof(CharacterController))]
 public class CharacterSideScroller : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CharacterSideScroller : MonoBehaviour
     private Vector3 velocity;
     private int jumpsRemaining;
     public UnityEvent jumpEvent;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -23,8 +25,17 @@ public class CharacterSideScroller : MonoBehaviour
         // Horizontal movement
         var moveInput = Input.GetAxis("Horizontal");
         var moveDirection = new Vector3(moveInput, 0f, 0f) * moveSpeed;
-        
-        
+
+        // Rotate player based on input
+        if (moveInput > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, -180, 0);  // Face right
+        }
+        else if (moveInput < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0); // Face left
+        }
+
         // Apply gravity
         if (!controller.isGrounded)
         {
