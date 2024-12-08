@@ -4,6 +4,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(CharacterController))]
 public class CharacterSideScroller : MonoBehaviour
 {
+    public ScoreManager scoreManager;
+
     public float moveSpeed = 5f;
     public float jumpForce = 4f;
     public float gravity = -9.81f;
@@ -12,7 +14,10 @@ public class CharacterSideScroller : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocity;
     private int jumpsRemaining;
+
     public UnityEvent jumpEvent;
+    public UnityEvent runEvent;
+    public UnityEvent idleEvent;  // Add an idle event
 
     private void Awake()
     {
@@ -26,6 +31,16 @@ public class CharacterSideScroller : MonoBehaviour
         var moveInput = Input.GetAxis("Horizontal");
         var moveDirection = new Vector3(moveInput, 0f, 0f) * moveSpeed;
 
+        // Trigger run or idle events based on input
+        if (moveInput != 0)
+        {
+            runEvent.Invoke();
+        }
+        else
+        {
+            idleEvent.Invoke();  // Trigger idle event when no horizontal input
+        }
+
         // Rotate player based on input
         if (moveInput > 0)
         {
@@ -33,7 +48,7 @@ public class CharacterSideScroller : MonoBehaviour
         }
         else if (moveInput < 0)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Face left
+            transform.rotation = Quaternion.Euler(0, 0, 0);  // Face left
         }
 
         // Apply gravity
@@ -48,12 +63,12 @@ public class CharacterSideScroller : MonoBehaviour
         }
 
         // Jumping
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             if (controller.isGrounded || jumpsRemaining > 0)
             {
                 jumpEvent.Invoke();
-                velocity.y = Mathf.Sqrt(jumpForce * -2 * gravity);
+                velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
                 jumpsRemaining--;
             }
         }
@@ -67,5 +82,14 @@ public class CharacterSideScroller : MonoBehaviour
         var newPosition = transform1.position;
         newPosition.z = 0;
         transform1.position = newPosition;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            scoreManager.AddScore(10); // Add points as needed
+            Destroy(other.gameObject);
+        }
     }
 }
