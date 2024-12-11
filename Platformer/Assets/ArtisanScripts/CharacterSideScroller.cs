@@ -4,7 +4,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(CharacterController))]
 public class CharacterSideScroller : MonoBehaviour
 {
-    public ScoreManager scoreManager;
+    
 
     public float moveSpeed = 5f;
     public float jumpForce = 4f;
@@ -84,12 +84,5 @@ public class CharacterSideScroller : MonoBehaviour
         transform1.position = newPosition;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Coin"))
-        {
-            scoreManager.AddScore(10); // Add points as needed
-            Destroy(other.gameObject);
-        }
-    }
+ 
 }

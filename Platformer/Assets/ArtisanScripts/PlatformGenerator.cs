@@ -10,13 +10,16 @@ public class PlatformGenerator : MonoBehaviour
     public float platformLength = 10f;
     public int initialNumberOfPlatforms = 5;
     public float horizontalSpacing = 15f;
-    public float verticalOffset = -1f;
+    public float verticalOffset = -1f; // Existing offset for initial vertical placement
+    public float verticalSpacing = 2f; // New vertical spacing variable
     public float delayBeforeAddingCollider = 1.0f;
     public int platformsBeforeUnload = 2;
-    
+    public CoinManager coinManager; // Reference to the CoinManager
+    public float minYRotation = 0f; // Minimum Y-axis rotation
+    public float maxYRotation = 360f; // Maximum Y-axis rotation
+
     private Vector3 lastSpawnPosition;    
     private Queue<GameObject> platforms = new Queue<GameObject>();
-    public CoinManager coinManager; // Reference to the CoinManager
 
     void Start()
     {
@@ -40,10 +43,14 @@ public class PlatformGenerator : MonoBehaviour
 
     void SpawnPlatform()
     {
-        lastSpawnPosition += new Vector3(platformLength + horizontalSpacing, 0, 0);
+        // Add verticalSpacing to consistently space platforms vertically
+        lastSpawnPosition += new Vector3(platformLength + horizontalSpacing, verticalSpacing, 0);
 
         float randomYPosition = Random.Range(-5f, 5f);
-        Quaternion rotation = Quaternion.Euler(0, 0, 0);
+        
+        // Generate a random rotation around the Y-axis
+        float randomYRotation = Random.Range(minYRotation, maxYRotation);
+        Quaternion rotation = Quaternion.Euler(0, randomYRotation, 0);
         
         GameObject newPlatform = Instantiate(platformPrefab, lastSpawnPosition + new Vector3(0, randomYPosition, 0), rotation);
         platforms.Enqueue(newPlatform);

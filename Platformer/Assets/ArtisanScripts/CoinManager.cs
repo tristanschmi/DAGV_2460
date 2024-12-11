@@ -5,10 +5,8 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     public GameObject coinPrefab;
-    public float coinSpacing = 3f;
     public float coinHeightOffset = 1f;
-
-    private int score = 0;
+    public float coinSpawnChance = 0.5f; // Probability (0 to 1) that a coin will spawn on a platform
 
     public void SpawnCoinsOnPlatform(Vector3 platformPosition, float platformLength)
     {
@@ -24,23 +22,17 @@ public class CoinManager : MonoBehaviour
             return;
         }
 
-        Vector3 startCoinPosition = platformPosition - new Vector3(platformLength / 2, 0, 0) + new Vector3(0, coinHeightOffset, 0);
-
-        for (float x = 0; x < platformLength; x += coinSpacing)
+        // Decide randomly whether to spawn a coin on this platform
+        if (Random.value <= coinSpawnChance)
         {
-            Vector3 spawnPosition = startCoinPosition + new Vector3(x, 0, 0);
+            float randomX = Random.Range(-platformLength / 2, platformLength / 2);
+            Vector3 spawnPosition = platformPosition + new Vector3(randomX, coinHeightOffset, 0);
             Instantiate(coinPrefab, spawnPosition, Quaternion.identity);
             Debug.Log($"Coin spawned at: {spawnPosition}");
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Coin"))
+        else
         {
-            Destroy(other.gameObject);
-            score++;
-            Debug.Log("Score: " + score);
+            Debug.Log("No coin spawned on this platform.");
         }
     }
 }
